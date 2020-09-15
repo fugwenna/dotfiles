@@ -5,7 +5,7 @@
     foreground: #f8f8f2;
     background-color: #282a36;
 /*    active-background: #6272a4;*/
-    active-background: #6E5991;
+    active-background: #454B85;
     urgent-background: #ff5555;
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
@@ -21,7 +21,7 @@
     border-radius: 4;
     border-color: @bordercolor;
     padding:          5;
-    width:25%;
+    width:40%;
 }
 #mainbox {
     border:  0;
