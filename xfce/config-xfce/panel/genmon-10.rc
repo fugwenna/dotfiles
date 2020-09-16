@@ -1,6 +1,0 @@
-Command=sh /home/fugwenna/Projects/genmon/src/xfce4-genmon-hdd.sh
-UseLabel=1
-Text=
-UpdatePeriod=30000
-Font=Noto Sans 10.5
-

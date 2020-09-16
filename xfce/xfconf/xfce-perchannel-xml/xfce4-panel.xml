@@ -74,6 +74,8 @@
       </property>
       <property name="size-max" type="uint" value="20"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="vlc"/>
+        <value type="string" value="kazam"/>
         <value type="string" value="thunar"/>
         <value type="string" value="remmina"/>
         <value type="string" value="mx-tweak"/>

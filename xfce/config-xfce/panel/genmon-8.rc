@@ -1,6 +1,0 @@
-Command=sh /home/fugwenna/Projects/genmon/src/xfce4-genmon-gpu.sh
-UseLabel=1
-Text=
-UpdatePeriod=5000
-Font=Noto Sans 10.5
-

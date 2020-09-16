@@ -30,7 +30,7 @@ MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=FALSE
-ColorBackground=#12d2121f170a
+ColorBackground=#1d331f2f3258
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 TitleMode=TERMINAL_TITLE_HIDE
 
