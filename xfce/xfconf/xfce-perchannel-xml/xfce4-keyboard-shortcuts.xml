@@ -30,9 +30,10 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="exo-open --launch TerminalEmulator"/>
       <property name="override" type="bool" value="true"/>
       <property name="Print" type="string" value="flameshot gui"/>
-      <property name="Super_R" type="string" value="xfce4-appfinder"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Delete" type="string" value="xflock4"/>
       <property name="Super_L" type="string" value="rofi -show run -theme config"/>
+      <property name="&lt;Primary&gt;Super_R" type="string" value="xfce4-appfinder"/>
+      <property name="Super_R" type="string" value="rofi -show run -theme config"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
