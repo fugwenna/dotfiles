@@ -21,8 +21,8 @@ scrollbox_animate=true
 theme_dir=/usr/share/xfce4/weather/icons/simplistic
 show_scrollbox=true
 scrollbox_lines=1
-scrollbox_font=Liberation Sans Bold 12
-scrollbox_color=rgba(0,0,0,0)
-scrollbox_use_color=false
+scrollbox_font=JetBrains Mono Bold 10
+scrollbox_color=rgb(211,215,207)
+scrollbox_use_color=true
 label0=3
 

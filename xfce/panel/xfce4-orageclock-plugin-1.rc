@@ -7,7 +7,7 @@ height_set=false
 lines_vertically=true
 rotation=0
 data0=%H:%M\ 
-font0=Liberation Sans Bold 12
+font0=JetBrains Mono weight=637 10
 tooltip=%d %b %Y
 hib_timing=false
 
