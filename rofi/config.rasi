@@ -4,7 +4,6 @@
     font: "JetBrainsMono Nerd Font Bold 14px";
     foreground: #f8f8f2;
     background-color: #282a36;
-/*    active-background: #6272a4;*/
     active-background: #454B85;
     urgent-background: #ff5555;
     selected-background: @active-background;
