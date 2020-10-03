@@ -1,4 +1,4 @@
-export EDITOR='vim'
+export EDITOR="vim"
 
 function parse_version_control() {
     BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
