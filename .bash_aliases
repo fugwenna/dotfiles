@@ -25,6 +25,7 @@ alias ins="sudo apt install"
 alias arm="sudo apt remove --purge"
 alias gcom="git add -A && git commit -am"
 alias lt="tree"
+alias ls="ls -l --color=auto --group-directories-first"
 alias v="vim"
 alias save-config="cp -R ~/.config/xfce4/* ~/Projects/dotfiles/xfce/ && cp /usr/share/rofi/themes/config.rasi ~/Projects/dotfiles/rofi/ && cd ~/Projects/dotfiles && git status && cp ~/.bash_aliases ~/Projects/dotfiles"
 
