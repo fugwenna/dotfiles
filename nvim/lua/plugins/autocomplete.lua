@@ -45,7 +45,11 @@ return {
                 capabilities = capabilities
             });
 
-            lspconfig["tsserver"].setup({
+            lspconfig.tsserver.setup({
+                capabilities = capabilities
+            });
+
+            lspconfig.omnisharp.setup({
                 capabilities = capabilities
             });
         end
