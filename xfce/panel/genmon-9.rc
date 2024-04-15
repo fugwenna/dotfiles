@@ -1,6 +1,0 @@
-Command=sh /home/fugwenna/Projects/dotfiles/genmon/src/xfce4-genmon-mem.sh
-UseLabel=1
-Text=
-UpdatePeriod=5000
-Font=JetBrains Mono Bold 10.5
-
