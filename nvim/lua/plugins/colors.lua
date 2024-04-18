@@ -10,6 +10,10 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-        require "nordic".load()
+        local nordic = require("nordic")
+        nordic.setup({
+            bright_border = true
+        })
+        nordic.load()
     end
 }
