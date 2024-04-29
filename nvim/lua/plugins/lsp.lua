@@ -30,11 +30,16 @@ return {
             config.lua_ls.setup({})
             config.tsserver.setup({}) -- TODO
             --config.angularls.setup({}) -- TODO
+
+            local pid = vim.fn.getpid()
+            local omnisharp_bin = "/usr/local/bin/omnisharp-roslyn/OmniSharp"
+
             config.omnisharp.setup({
+                cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) },
                 root_dir = function ()
-                    return vim.loop.cwd() -- current working directory
+                    return vim.loop.cwd()
                 end,
-            }) -- TODO
+            })
             config.pylsp.setup({})
 
             vim.keymap.set("n", "<F12>", function() vim.lsp.buf.definition() end, {})
