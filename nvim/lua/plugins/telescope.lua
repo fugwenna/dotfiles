@@ -10,8 +10,36 @@ return {
 
         telescope.setup({
             defaults = {
+				path_display = {
+					"shorten"
+				},
+                layout_config = {
+                    horizontal = {
+                        height = .95,
+                        width = .95
+                    },
+                    vertical = {
+                        height = .95,
+                        width = .95
+                    }
+                },
                 file_ignore_patterns = {
+                    "dist/*",
                     "node_modules/*",
+                    ".dll",
+                    ".cache",
+                    ".pdb",
+                    "AssemblyInfo.cs",
+                    "FileListAbsolute.txt",
+                    "Up2Date",
+                    ".g.cs",
+					".g.props",
+                    ".pak",
+					".so",
+					".bin",
+					".dylib",
+					"nuget.info",
+					"restore.info"
                 }
             }
         })

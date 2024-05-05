@@ -27,6 +27,7 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             local config = require("lspconfig")
+            local util = require("lspconfig.util")
             config.lua_ls.setup({})
             config.tsserver.setup({}) -- TODO
             --config.angularls.setup({}) -- TODO
@@ -37,7 +38,7 @@ return {
             config.omnisharp.setup({
                 cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) },
                 root_dir = function ()
-                    return vim.loop.cwd()
+                    util.root_pattern("*.sln", "*.csproj", "*.projitems", "*.shproj")
                 end,
             })
             config.pylsp.setup({})

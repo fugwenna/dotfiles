@@ -1,6 +1,6 @@
 return {
     { "nvim-tree/nvim-web-devicons" },
-    { 
+    {
         "nvim-tree/nvim-tree.lua",
         config = function()
             vim.g.termguicolors = true
@@ -10,6 +10,9 @@ return {
             require("nvim-tree").setup({
                 filters = {
                     dotfiles = false
+                },
+                view = {
+                    width = 60
                 }
             })
         end
