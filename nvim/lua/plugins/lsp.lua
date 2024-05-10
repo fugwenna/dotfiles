@@ -31,19 +31,24 @@ return {
             config.lua_ls.setup({})
             config.tsserver.setup({}) -- TODO
             --config.angularls.setup({}) -- TODO
-
-            local pid = vim.fn.getpid()
-            local omnisharp_bin = "/usr/local/bin/omnisharp-roslyn/OmniSharp"
+            --local pid = vim.fn.getpid()
+            --local omnisharp_bin = "/usr/local/bin/omnisharp-roslyn/OmniSharp"
 
             config.omnisharp.setup({
-                cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) },
+                --cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) },
+                cmd = { "dotnet", vim.fn.stdpath "data" .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+                enable_import_completion = true,
+                organization_imports_on_format = true,
+                enable_roslyn_analyzers = true,
                 root_dir = function ()
-                    util.root_pattern("*.sln", "*.csproj", "*.projitems", "*.shproj")
+                    --return vim.loop.cwd()
+                    return util.root_pattern("*.sln", "*.csproj", "*.projitems", "*.shproj")
                 end,
             })
             config.pylsp.setup({})
 
             vim.keymap.set("n", "<F12>", function() vim.lsp.buf.definition() end, {})
+            vim.keymap.set("n", "<leader>e", function() vim.diagnostic.open_float() end, {})
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
         end
     }
