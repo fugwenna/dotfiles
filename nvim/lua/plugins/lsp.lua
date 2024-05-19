@@ -41,11 +41,15 @@ return {
                 organization_imports_on_format = true,
                 enable_roslyn_analyzers = true,
                 root_dir = function ()
-                    --return vim.loop.cwd()
-                    return util.root_pattern("*.sln", "*.csproj", "*.projitems", "*.shproj")
+                    return vim.loop.cwd()
+                    --return util.root_pattern("*.sln", "*.csproj", "*.projitems", "*.shproj")
                 end,
             })
-            config.pylsp.setup({})
+            config.pylsp.setup({
+                plugins = {
+                    autopep8 = { enabled = false },
+                }
+            })
 
             vim.keymap.set("n", "<F12>", function() vim.lsp.buf.definition() end, {})
             vim.keymap.set("n", "<leader>e", function() vim.diagnostic.open_float() end, {})
