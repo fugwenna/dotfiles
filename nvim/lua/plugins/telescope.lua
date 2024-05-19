@@ -44,8 +44,8 @@ return {
             }
         })
 
-        vim.keymap.set("n", "<C-p>", builtin.find_files, {})
-        vim.keymap.set("n", "<C-f>", builtin.git_files, {})
+        vim.keymap.set("n", "<C-f>", builtin.find_files, {})
+        vim.keymap.set("n", "<C-p>", builtin.git_files, {})
         vim.keymap.set("n", "<leader>pg", builtin.live_grep, {})
         vim.keymap.set("n", "<leader>m", builtin.lsp_document_symbols, {})
         vim.keymap.set("n", "<leader>u", builtin.lsp_references, {})

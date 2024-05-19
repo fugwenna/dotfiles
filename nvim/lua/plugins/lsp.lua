@@ -25,22 +25,31 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp",
+        },
         config = function()
             local config = require("lspconfig")
-            local util = require("lspconfig.util")
-            config.lua_ls.setup({})
-            config.tsserver.setup({}) -- TODO
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+            config.lua_ls.setup({
+                capabilities = capabilities
+            })
+
+            config.tsserver.setup({
+                capabilities = capabilities,
+            })
+
+            -- TODO
             --config.angularls.setup({}) -- TODO
-            --local pid = vim.fn.getpid()
-            --local omnisharp_bin = "/usr/local/bin/omnisharp-roslyn/OmniSharp"
 
             config.omnisharp.setup({
-                --cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) },
+                capabilities = capabilities,
                 cmd = { "dotnet", vim.fn.stdpath "data" .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
                 enable_import_completion = true,
                 organization_imports_on_format = true,
                 enable_roslyn_analyzers = true,
-                root_dir = function ()
+                root_dir = function()
                     return vim.loop.cwd()
                     --return util.root_pattern("*.sln", "*.csproj", "*.projitems", "*.shproj")
                 end,
