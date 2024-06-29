@@ -35,8 +35,8 @@ return {
                     ".g.cs",
                     ".g.props",
                     ".pak",
-                    ".so",
-                    --".bin",
+                    --".so",
+                    ".bin",
                     ".dylib",
                     "nuget.info",
                     "restore.info"
@@ -49,5 +49,6 @@ return {
         vim.keymap.set("n", "<leader>pg", builtin.live_grep, {})
         vim.keymap.set("n", "<leader>m", builtin.lsp_document_symbols, {})
         vim.keymap.set("n", "<leader>u", builtin.lsp_references, {})
+        vim.keymap.set("n", "<leader>e", builtin.diagnostics, {})
     end
 }
