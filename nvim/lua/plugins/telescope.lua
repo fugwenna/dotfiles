@@ -10,6 +10,9 @@ return {
 
         telescope.setup({
             defaults = {
+                diagnostics = {
+                    bufnr = 0
+                },
                 path_display = {
                     "shorten"
                 },
