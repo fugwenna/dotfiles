@@ -48,12 +48,20 @@ return {
                 }
             })
 
+            local function show_diagnostics_for_current_buffer()
+                local bufnr = vim.api.nvim_get_current_buf()
+                builtin.diagnostics({
+                    bufnr = bufnr
+                })
+            end
+
             vim.keymap.set("n", "<C-f>", builtin.find_files, {})
             vim.keymap.set("n", "<C-p>", builtin.git_files, {})
             vim.keymap.set("n", "<leader>pg", builtin.live_grep, {})
             vim.keymap.set("n", "<leader>m", builtin.lsp_document_symbols, {})
             vim.keymap.set("n", "<leader>u", builtin.lsp_references, {})
-            vim.keymap.set("n", "<leader>E", builtin.diagnostics)
+            --vim.keymap.set("n", "<leader>E", builtin.diagnostics, { bufnr = 0})
+            vim.keymap.set('n', '<leader>E', show_diagnostics_for_current_buffer, { noremap = true, silent = true, desc = 'Show diagnostics for current buffer' })
         end
     },
     {
@@ -66,7 +74,7 @@ return {
         config = function()
             local codeaction = require("tiny-code-action")
             codeaction.setup()
-            vim.keymap.set("n", "<leader>ca", function()
+            vim.keymap.set("n", "<leader>.", function()
                 codeaction.code_action()
             end, { noremap = true, silent = true })
         end

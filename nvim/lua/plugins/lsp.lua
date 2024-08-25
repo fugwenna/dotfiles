@@ -65,6 +65,20 @@ return {
             --vim.keymap.set("n", "<leader>e", function() vim.diagnostic.open_float() end, {})
             vim.keymap.set("n", "<C-l>", vim.cmd.LspInfo)
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+
+            -- TODO: clean this up
+            local function organize_imports()
+                local params = {
+                    command = '_typescript.organizeImports',
+                    arguments = { vim.api.nvim_buf_get_name(0) }
+                }
+                vim.lsp.buf.execute_command(params)
+            end
+
+            vim.keymap.set("n", "<leader>f", function()
+                organize_imports()
+            end, {})
+
         end
     }
 }
