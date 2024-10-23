@@ -15,7 +15,7 @@ return {
                 },
                 ensure_installed = {
                     "lua_ls",
-                    "tsserver",
+                    "ts_ls",
                     "angularls",
                     "omnisharp",
                     "pylsp"
@@ -32,17 +32,29 @@ return {
             local config = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            config.lua_ls.setup({
-                capabilities = capabilities
-            })
+            -- https://github.com/neovim/nvim-lspconfig/pull/3232#issuecomment-2331025714
+            -- automatically install ensure_installed servers
+			require("mason-lspconfig").setup_handlers({
+				function(server_name) 
+                    if server_name ~= "omnisharp" then
+                        require("lspconfig")[server_name].setup({
+                            capabilities = capabilities,
+                        })
+                    end
+				end
+			})
 
-            config.tsserver.setup({
-                capabilities = capabilities,
-            })
+            --config.lua_ls.setup({
+            --    capabilities = capabilities
+            --})
 
-            config.angularls.setup({
-                capabilities = capabilities,
-            }) -- TODO
+            --config.tsserver.setup({
+            --    capabilities = capabilities,
+            --})
+
+            --config.angularls.setup({
+            --    capabilities = capabilities,
+            --}) -- TODO
 
             config.omnisharp.setup({
                 capabilities = capabilities,
@@ -54,11 +66,12 @@ return {
                     return vim.loop.cwd()
                 end,
             })
-            config.pylsp.setup({
-                plugins = {
-                    autopep8 = { enabled = false },
-                }
-            })
+
+            --config.pylsp.setup({
+            --    plugins = {
+            --        autopep8 = { enabled = false },
+            --    }
+            --})
 
             vim.keymap.set("n", "<F12>", function() vim.lsp.buf.definition() end, {})
             --vim.keymap.set("n", "<S-F12>", function() vim.lsp.buf.go_to_implementation() end, {})
@@ -78,7 +91,6 @@ return {
             vim.keymap.set("n", "<leader>f", function()
                 organize_imports()
             end, {})
-
         end
     }
 }

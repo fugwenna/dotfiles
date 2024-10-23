@@ -16,7 +16,14 @@ return {
             local colors = require("nordic.colors")
             nordic.setup({
                 bright_border = true,
+                telescope = {
+                    style = 'classic'
+                },
                 override = {
+                    CursorLineNr = {
+                        fg = colors.white3,
+                        bold = true
+                    },
                     LineNr = {
                         fg = colors.grey5
                     },

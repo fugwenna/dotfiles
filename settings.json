@@ -1,0 +1,54 @@
+{
+  "csharp.debug.hotReloadOnSave": false,
+  "csharp.suppressHiddenDiagnostics": true,
+  "[csharp]": {
+    "editor.rulers": [
+      120
+    ],
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+  },
+  "editor.codeLens": false,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.fontFamily": "Hack",
+  "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "eslint.format.enable": true,
+  "explorer.compactFolders": true,
+  "debug.console.fontFamily": "Consolas, 'Courier New', monospace",
+  "dotnet.automaticallyCreateSolutionInWorkspace": false,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/Dashboard": true,
+    "**/node_modules": true,
+    "**/package-lock.json": true,
+    "**/Terra.Portal": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.hg/store/**": true
+  },
+  "files.trimTrailingWhitespace": true,
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "git.mergeEditor": true,
+  "git.openRepositoryInParentFolders": "never",
+  "html.format.indentHandlebars": true,
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "omnisharp.enableMsBuildLoadProjectsOnDemand": true,
+  "omnisharp.organizeImportsOnFormat": true,
+  "search.searchOnType": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "typescript.preferences.importModuleSpecifier": "project-relative",
+  "typescript.tsserver.maxTsServerMemory": 6072,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.statusBar.visible": false,
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "material-icon-theme"
+}
